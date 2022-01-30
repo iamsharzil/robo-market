@@ -60,6 +60,12 @@
           },
 
           {
+            "pattern": "@mui/icons-material/**/*",
+            "group": "internal",
+            "position": "before"
+          },
+
+          {
             "pattern": "**/@views/**",
             "group": "internal",
             "position": "before"
