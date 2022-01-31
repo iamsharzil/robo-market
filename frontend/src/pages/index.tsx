@@ -1,7 +1,8 @@
 import { NextPage } from "next";
-import { ProductGrid } from "src/features/product-grid";
 
 import { Container } from "@mui/material";
+
+import { ProductGrid } from "@features/product-grid";
 
 import Layout from "@components/Layout";
 

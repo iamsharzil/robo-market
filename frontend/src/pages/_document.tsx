@@ -1,3 +1,4 @@
+import createEmotionServer from "@emotion/server/create-instance";
 import Document, {
   Html,
   Head,
@@ -6,8 +7,6 @@ import Document, {
   DocumentProps,
   DocumentContext,
 } from "next/document";
-
-import createEmotionServer from "@emotion/server/create-instance";
 
 import createEmotionCache from "@shared/createEmotionCache";
 import theme from "@shared/theme";
@@ -28,7 +27,7 @@ export default function MyDocument(props: DocumentProps) {
           crossOrigin="true"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </Head>
