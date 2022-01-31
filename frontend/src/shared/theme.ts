@@ -4,10 +4,12 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 let theme = createTheme({
   typography: {
     fontFamily: "Montserrat, sans-serif",
+    htmlFontSize: 10,
+    fontWeightBold: 600,
   },
   palette: {
     primary: {
-      main: "#ff3e6c",
+      main: "#e3364e",
     },
     secondary: {
       main: "#535766",

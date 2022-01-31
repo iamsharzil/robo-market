@@ -1,19 +1,16 @@
-import Image from "next/image";
-
+import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
 import { format } from "date-fns";
 
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { Box, Card, CardContent, Divider, Typography } from "@mui/material";
+
+import CartIcon from "@mui/icons-material/ShoppingBagOutlined";
+
+import { ProductImage } from "@components/product-image";
+import { ProductPrice } from "@components/product-price";
 
 import theme from "@shared/theme";
 
 export const ProductItem = () => {
-  const priceInBaht = new Intl.NumberFormat("th-TH", {
-    style: "currency",
-    currency: "THB",
-  });
-
   const formattedData = format(
     new Date("2022-01-24T01:09:51.159Z"),
     "dd-mm-yyy"
@@ -21,34 +18,12 @@ export const ProductItem = () => {
 
   return (
     <Card sx={{ maxWidth: 300, margin: "0 auto" }} elevation={1}>
-      <Box width={120} height={120} mx={"auto"} position={"relative"}>
-        <Image
-          src={"https://robohash.org/Jedediah Schuster.png?size=120x120"}
-          alt="..."
-          layout="fill"
-        />
-      </Box>
+      <ProductImage src="https://robohash.org/Ericka Berge.png" />
       <CardContent sx={{ textAlign: "center" }}>
         <Typography fontWeight={"bold"}>Jedediah Schuster</Typography>
         <Box mb={1} />
         <Box display={"flex"} alignItems={"center"} justifyContent={"center"}>
-          <Typography
-            variant="body2"
-            color={theme.palette.secondary.main}
-            fontWeight={"bold"}
-          >
-            {priceInBaht.format(837.69)}
-          </Typography>
-          <Typography
-            variant="body2"
-            color={theme.palette.secondary.main}
-            ml={1}
-            sx={{
-              textDecoration: "line-through",
-            }}
-          >
-            {priceInBaht.format(1000)}
-          </Typography>
+          <ProductPrice originalPrice={1200} discountPrice={800} />
         </Box>
         <Box mb={1} />
 
@@ -56,12 +31,12 @@ export const ProductItem = () => {
           onClick={() => {
             console.log("CLICK");
           }}
-          startIcon={<ShoppingBagOutlinedIcon />}
+          startIcon={<CartIcon />}
           //   loading={loading}
-          loadingPosition="end"
+          loadingPosition="center"
           variant="contained"
         >
-          ADD TO BAG
+          <Typography variant="body2">Add To Bag</Typography>
         </LoadingButton>
         <Box mb={1} />
 

@@ -8,7 +8,6 @@ export const globalStyles = (
       }
 
       body {
-        font-size: 1.6rem;
         color: #282c3f;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;

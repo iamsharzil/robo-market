@@ -48,25 +48,37 @@
           },
 
           {
-            "pattern": "**/next/**",
+            "pattern": "next",
             "group": "external",
             "position": "before"
           },
 
           {
-            "pattern": "**/@mui/**",
-            "group": "internal",
+            "pattern": "next/image",
+            "group": "external",
             "position": "before"
+          },
+
+          {
+            "pattern": "@mui/material/**/*",
+            "group": "external",
+            "position": "after"
+          },
+
+          {
+            "pattern": "@mui/lab/**/*",
+            "group": "external",
+            "position": "after"
           },
 
           {
             "pattern": "@mui/icons-material/**/*",
-            "group": "internal",
-            "position": "before"
+            "group": "external",
+            "position": "after"
           },
 
           {
-            "pattern": "**/@views/**",
+            "pattern": "**/@features/**",
             "group": "internal",
             "position": "before"
           },

@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@interfaces/*": ["src/interfaces/*"],
+      "@features/*": ["src/features/*"],
       "@hooks/*": ["src/hooks/*"],
       "@provider/*": ["src/provider/*"],
       "@shared/*": ["src/shared/*"],

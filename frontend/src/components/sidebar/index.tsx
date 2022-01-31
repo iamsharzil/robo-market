@@ -1,7 +1,10 @@
 import { useState } from "react";
 
+import { Drawer, IconButton } from "@mui/material";
+
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import { Button, Drawer, IconButton } from "@mui/material";
+
+import { CartInfo } from "@features/cart";
 
 export const Sidebar = () => {
   const [state, setState] = useState(false);
@@ -10,18 +13,17 @@ export const Sidebar = () => {
 
   return (
     <>
-      <Button onClick={() => toggleDrawer(!state)}>
-        <IconButton
-          size="large"
-          edge="start"
-          aria-label="cart"
-          sx={{ color: "#fff" }}
-        >
-          <ShoppingBagOutlinedIcon />
-        </IconButton>
-      </Button>
+      <IconButton
+        size="large"
+        edge="start"
+        aria-label="cart"
+        sx={{ color: "#fff" }}
+        onClick={() => toggleDrawer(!state)}
+      >
+        <ShoppingBagOutlinedIcon />
+      </IconButton>
       <Drawer anchor={"right"} open={state} onClose={() => toggleDrawer(false)}>
-        Content
+        <CartInfo />
       </Drawer>
     </>
   );
