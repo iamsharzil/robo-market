@@ -1,4 +1,3 @@
-import createEmotionServer from "@emotion/server/create-instance";
 import Document, {
   Html,
   Head,
@@ -7,6 +6,8 @@ import Document, {
   DocumentProps,
   DocumentContext,
 } from "next/document";
+
+import createEmotionServer from "@emotion/server/create-instance";
 
 import createEmotionCache from "@shared/createEmotionCache";
 import theme from "@shared/theme";

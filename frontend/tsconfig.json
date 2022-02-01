@@ -21,10 +21,12 @@
       "@hooks/*": ["src/hooks/*"],
       "@provider/*": ["src/provider/*"],
       "@shared/*": ["src/shared/*"],
-      "@views/*": ["src/views/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@config/*": ["src/config/*"],
+      "@interfaces/*": ["src/interfaces/*"]
     },
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "downlevelIteration": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

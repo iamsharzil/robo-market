@@ -5,15 +5,15 @@ import { convertAmountToBaht } from "@utils/index";
 import theme from "@shared/theme";
 
 type ProductPriceType = {
-  discountPrice: number;
-  originalPrice?: number;
+  discountPrice: string;
+  originalPrice?: string;
 };
 export const ProductPrice = ({
   discountPrice,
   originalPrice,
 }: ProductPriceType) => {
-  const originalPriceInBaht = convertAmountToBaht(discountPrice);
-  const discountPriceInBaht = convertAmountToBaht(discountPrice);
+  const originalPriceInBaht = convertAmountToBaht(+discountPrice);
+  const discountPriceInBaht = convertAmountToBaht(+discountPrice);
 
   return (
     <>
