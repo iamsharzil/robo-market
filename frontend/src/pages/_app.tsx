@@ -1,11 +1,16 @@
 import * as React from "react";
 
-import { CacheProvider, EmotionCache } from "@emotion/react";
 import { AppProps } from "next/app";
 import Head from "next/head";
 
+import { CacheProvider, EmotionCache } from "@emotion/react";
+import { Hydrate, QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
+
+import { CartProvider } from "@provider/cart";
 
 import createEmotionCache from "@shared/createEmotionCache";
 import { globalStyles } from "@shared/styles";
@@ -20,7 +25,7 @@ interface MyAppProps extends AppProps {
 
 export default function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-
+  const [queryClient] = React.useState(() => new QueryClient());
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -28,9 +33,15 @@ export default function MyApp(props: MyAppProps) {
       </Head>
       <ThemeProvider theme={theme}>
         {globalStyles}
-        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <CartProvider>
+              <Component {...pageProps} />
+            </CartProvider>
+          </Hydrate>
+          <ReactQueryDevtools initialIsOpen={true} />
+        </QueryClientProvider>
       </ThemeProvider>
     </CacheProvider>
   );

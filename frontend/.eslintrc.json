@@ -54,7 +54,7 @@
           },
 
           {
-            "pattern": "next/image",
+            "pattern": "next/**/*",
             "group": "external",
             "position": "before"
           },
@@ -109,6 +109,24 @@
 
           {
             "pattern": "**/@shared/**",
+            "group": "internal",
+            "position": "before"
+          },
+
+          {
+            "pattern": "**/@config/**",
+            "group": "internal",
+            "position": "before"
+          },
+
+          {
+            "pattern": "**/@interfaces/**",
+            "group": "internal",
+            "position": "before"
+          },
+
+          {
+            "pattern": "**/@utils/**",
             "group": "internal",
             "position": "before"
           }
